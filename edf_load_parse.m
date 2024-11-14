@@ -4,7 +4,9 @@ clear all; clc; %close all
 cd(p)
 
 %%
-skipAnnot = false;
+skipAnnot = True; % keep this set to True unless you REALLY need annotations
+% pretty sure it will load entire file in otherwise
+
 [sFile, ChannelMat, ImportOptions] = in_fopen_edf([p,f],skipAnnot);
 sfreq = sFile.prop.sfreq(1); % sampling frequency from header
 
